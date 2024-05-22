@@ -1,5 +1,5 @@
-<h1 align="center"> Event Management System</h1>
-<!-- <h3 align="center">Live at https://invite-onweb.vercel.app/</h3> -->
+<!-- <h1 align="center"> InVITe | Event Management System</h1>
+<h3 align="center">Live at https://invite-onweb.vercel.app/</h3>
 Welcome to our automated event management system, where you can easily organize events, manage registrations, and book tickets, all with just a few clicks. This system provides a hassle-free experience for both event organizers and attendees, making event management a breeze.
 <br>
 
@@ -28,7 +28,7 @@ Our event management system is built on a microservice architecture. This allows
 <br>
 <br>
 <h1>🚀 Getting Started (Locally)</h1>
-<!-- 
+
 <h3>Download or clone the repository</h3>
 <p>You can download the zip file of the repository or use the following command in your terminal to clone the repository:</p>
 <pre><code class="language-bash">git clone https://github.com/d17012002/event-management</code></pre>
@@ -61,8 +61,8 @@ JWT_SECRET - the secret key to use for JWT token generation</code></pre>
 <p>For the developer-side:</p>
 <pre><code class="language-arduino">npm run dev</code></pre>
 <h4>Note: Make sure to follow the exact steps mentioned above to avoid any errors or issues.</h4>
-<br> -->
-<!-- 
+<br>
+
 <h1>👉 How to use the site</h1>
 Our event management system has three main components:
 
@@ -114,7 +114,7 @@ Our team consists of:
   </a>.
   </li>
 </ul>
-<br> -->
+<br>
 
 <h1>🙌 Contributions</h1>
 We welcome contributions to our project. If you have any suggestions or improvements, feel free to submit a pull request or open an issue.
@@ -124,4 +124,4 @@ We welcome contributions to our project. If you have any suggestions or improvem
 <h1>📜 License</h1>
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 # Event-Management
-# Event-Management
+# Event-Management -->
