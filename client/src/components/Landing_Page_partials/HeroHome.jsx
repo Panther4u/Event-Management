@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../public/img/2171.jpg';
+// import image from '../../../public/img/2171.jpg';
 import { useRouter } from 'next/router';
 
 function HeroHome() {
@@ -8,9 +8,9 @@ function HeroHome() {
     return (
         <section
             className="relative bg-no-repeat bg-cover bg-center"
-            style={{
-                backgroundImage: `url(${image.src})`,
-            }}
+            // style={{
+            //     backgroundImage: `url(${image.src})`,
+            // }}
         >
             <br />
             <br />
@@ -26,11 +26,11 @@ function HeroHome() {
                                 EVE
                             </span>
                             {"nt />"}
-                            <p className="mt-3 text-5xl text-white">
+                            <p className="mt-3 text-5xl text-gray-500">
                                 {"Event Management"}
                             </p>
                         </h1>
-                        <p className="text-2xl text-white mb-8">
+                        <p className="text-2xl text-gray-500 mb-8">
                             "Bringing Your Events to Life: Simplified Registration, Seamless Management, and Easy Ticketing."
                         </p>
                         <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">

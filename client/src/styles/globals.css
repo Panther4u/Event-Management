@@ -330,6 +330,18 @@ button {
     width: 100%;
   }
 }
+@media (max-width: 1440px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+    height: 70px;
+    padding: 1.5rem;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
 
 /* QuickActions.css */
 
@@ -338,12 +350,13 @@ button {
   background: white;
   min-height: auto;
   overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 8px;
+  padding-top: 0px;
 }
 
 .quick-actions {
   list-style: none;
   padding: 8px;
-  padding-top: 0px;
   margin: 0;
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
@@ -412,4 +425,68 @@ button {
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis; /* Add ellipsis for overflowing text */
   width: 80px; /* Set a fixed width to control where the ellipsis appears */
+}
+
+
+@media (max-width: 1440px) {
+  .phone {
+    width: 100%;
+    background: white;
+    min-height: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 8px;
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .quick-actions {
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    align-items: center;
+    justify-content: space-between;
+  }
+  .quick-action__name {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    width: 80px; /* Set a fixed width to control where the ellipsis appears */
+  }
+  .quick-action__icon {
+    color: white;
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 24px;
+    padding: 1px;
+    display: flex; /* Use flex to center content */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+  }
+}
+@media (max-width: 768px) {
+
+  .quick-actions {
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    align-items: center;
+    justify-content: space-between;
+  }
+  
 }
