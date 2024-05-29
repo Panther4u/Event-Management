@@ -219,6 +219,7 @@
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const [dropdown1Open, setDropdown1Open] = useState(false);
@@ -235,6 +236,9 @@ const Header = () => {
     }
   };
 
+
+  const router = useRouter();
+
   const closeDropdowns = () => {
     setDropdown1Open(false);
     setDropdown2Open(false);
@@ -250,7 +254,7 @@ const Header = () => {
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
       </Helmet>    
     <header id="nav-menu" aria-label="navigation bar">
-      <div className="container">
+      <div className="contain">
         <div className="nav-start">
           <a className="logo" href="/">
             <img
@@ -270,7 +274,7 @@ const Header = () => {
                   aria-expanded={dropdown1Open}
                   aria-label="browse"
                 >
-                  Browse
+                  Home
                   <i className="bx bx-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div id="dropdown1" className={`dropdown ${dropdown1Open ? 'active' : ''}`}>
@@ -380,7 +384,7 @@ const Header = () => {
                   aria-expanded={dropdown2Open}
                   aria-label="discover"
                 >
-                  Discover
+                  Our Services
                   <i className="bx bx-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div id="dropdown2" className={`dropdown ${dropdown2Open ? 'active' : ''}`}>
@@ -408,20 +412,20 @@ const Header = () => {
                   </ul>
                 </div>
               </li>
-              <li><a className="nav-link" href="/">Jobs</a></li>
-              <li><a className="nav-link" href="/">Livestream</a></li>
               <li><a className="nav-link" href="/">About</a></li>
+              <li> <a href="/users/signin" className="nav-link"> Signin </a></li>
+              <li><a className="nav-link" href="/users/signup">Signup</a></li>
+              
             </ul>
           </nav>
         </div>
 
         <div className="nav-end">
-          <div className="right-container">
-          <a onClick={() => router.push("/admin/auth")} className="block w-full py-1 px-3 mb-1 bg-[color:var(--darker-secondary-color)] hover:bg-[color:var(--secondary-color)] text-center text-sm text-white font-bold leading-loose rounded-md" href="#">Event Manager</a>
-          {/* <a className="btn text-white bg-[color:var(--darker-secondary-color)] hover:bg-[color:var(--secondary-color)] w-full mb-4 sm:w-auto sm:mb-0" href="/users/signin">Sign In</a>
-              <a className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"  href="/users/signup">Sign Up</a> */}
-          </div>
-
+          <div className="right-contain">
+          
+          {/* <a href="/users/signin" className="block w-full py-1 px-3 mb-1 hover:text-blue-400 text-center text-md text-gray-500 font-bold leading-loose "> Signin </a>
+          <a className="block w-full py-1 px-3 mb-1  hover:text-blue-400 text-center text-md text-gray-500 font-bold leading-loose " href="/users/signup">Signup</a> */}
+          <a onClick={() => router.push("/admin/auth")} className="block w-full py-1 px-3 mb-1 bg-[color:var(--darker-secondary-color)] hover:bg-[color:var(--secondary-color)] text-center text-sm text-white font-bold leading-loose rounded-md" href="#">Event Manager</a></div> 
           <button
             id="hamburger"
             aria-label="hamburger"
