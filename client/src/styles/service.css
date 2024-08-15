@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './fonts.css';
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 4rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.heading {
+  font-size: 64px;
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 50px;
+  color: rgba(128, 128, 128, 0.842);
+}
+
+.serviceBox {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 2rem;
+}
+
+.serviceBox .service-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 60px;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.serviceBox .service-icon:before {
+  content: "";
+  background: #f1e0e0; 
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+}
+
+.serviceBox .service-icon:after {
+  content: "";
+  width: 4px;
+  height: 0;
+  background: #f3d5d5; 
+  margin: 0 auto;
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+.serviceBox:hover .service-icon:after {
+  height: 45px;
+}
+
+.serviceBox .service-icon img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.serviceBox .title {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(48, 47, 47, 0.801);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.serviceBox .title:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+  margin: 0 auto;
+  border: 5px solid #f1e0e0; 
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 780px) {
+  .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4;
+  }
+  .heading {
+    font-size: 44px;
+  }
+  .text-center{
+    margin-bottom: 2rem;
+  }
+  .serviceBox{
+    margin-top: -1rem;
+  }
+  .serviceBox .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .serviceBox .title {
+    font-size: 12px;
+  }
+  .serviceBox .title:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 5px;
+    margin: 0 auto;
+    border: 5px solid #f1e0e0; 
+    box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+  }
+  .serviceBox .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .serviceBox .service-icon:after {
+    content: "";
+    width: 4px;
+    height: 0;
+    background: #f3d5d5; 
+    margin: 0 auto;
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease 0s;
+  }
+}

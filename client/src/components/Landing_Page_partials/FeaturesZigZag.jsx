@@ -42,39 +42,15 @@ function FeaturesZigzag({ images }) {
                                 data-aos="fade-right"
                             >
                                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                                    <div className="text-xl text-[color:var(--darker-secondary-color)] mb-2">
-                                        More speed. High efficiency
-                                    </div>
-                                    <h3 className="h3 mb-3">
-                                        Keep events on schedule
-                                    </h3>
-                                    <p className="text-xl text-gray-500 mb-4">
-                                    In order to organize an event, you must log in as an event manager. The platform owner can assign event managers, or you may use test credentials. After logging in, you can begin managing the event.
-                                    </p>
-                                    <ul className="text-lg text-gray-500 -mb-2">
-                                        <li className="flex items-center mb-2">
-                                            <FaCheck
-                                                className="w-3 h-3 text-green-500 mr-2"
-                                            />
-                                            <span>
-                                                You will have your own dashboard
-                                            </span>
-                                        </li>
-                                        <li className="flex items-center mb-2">
-                                            <FaCheck
-                                                className="w-3 h-3 text-green-500 mr-2"
-                                            />
-                                            <span>Fill details and schedule your events</span>
-                                        </li>
-                                        <li className="flex items-center">
-                                            <FaCheck
-                                                className="w-3 h-3 text-green-500 mr-2"
-                                            />
-                                            <span>
-                                                Secure and quick access
-                                            </span>
-                                        </li>
-                                    </ul>
+                                <p>
+                Shivam Event Management is a full-service Event management & Wedding planning Company in Karur Tamilnadu started on 2017 with the method to establish an thrilling and provoking environment across the target audience so that our visitors or prospective clients experience reducing edge art direction of each visual element.
+              </p>
+              <p>
+                An Event management involves visualizing concepts, planning, budgeting, organizing and executing events such as concerts, corporate events, digital events, conferences & seminars, wedding planning, fashion shows, theme parties, product launching etc.
+              </p>
+              <p>
+                We at, Shivam Event Management help our clients attain their objectives via the improvement and execution of customized special events.
+              </p>
                                 </div>
                             </div>
                         </div>

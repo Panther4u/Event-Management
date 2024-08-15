@@ -21,19 +21,19 @@ function HeroHome() {
                     {/* Section header */}
                     <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
                         <h1 className="h1 m-2">
-                            {"< Shivam  "}
+                            {"Shivam "}
                             <span className="text-[color:var(--darker-secondary-color)]">
-                                EVE
+                            {"Event Management"}
                             </span>
-                            {"nt />"}
-                            <p className="mt-3 text-5xl text-gray-500">
+                            
+                            {/* <p className="mt-3 text-5xl text-gray-500">
                                 {"Event Management"}
-                            </p>
+                            </p> */}
                         </h1>
                         <p className="text-2xl text-gray-500 mb-8">
                             "Bringing Your Events to Life: Simplified Registration, Seamless Management, and Easy Ticketing."
                         </p>
-                        <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+                        {/* <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
                             <div>
                                 <a
                                     onClick={() => router.push("/admin/auth")}
@@ -42,7 +42,7 @@ function HeroHome() {
                                     Event Manager
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

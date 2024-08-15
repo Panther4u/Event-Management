@@ -1,0 +1,589 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  text-align: center;
+  color: #f8f5f5;
+  width: 100%;
+  min-height: 300px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/About bg image.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+  .headerContent {
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .title {
+    font-size: 2em;
+    margin: 0;
+    font-family: 'MyCustomFont', sans-serif;
+  }
+
+  .breadcrumb {
+    margin-top: 10px;
+    font-size: 1em;
+
+    a {
+      color: #faf9f9;
+      text-decoration: none;
+
+      &:hover {
+        color: #e27dc4;
+      }
+    }
+
+    span {
+      margin: 0 5px;
+    }
+  }
+}
+
+.article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.figure {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 20px;
+}
+
+.figcaption {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  h2 {
+    font: normal normal 400 2.4em/1.5 "Della Respira", serif;
+    padding-bottom: 10px;
+    color: #eeb9de;
+  }
+
+  p {
+    max-width: 1100px;
+    color: #bbb;
+    padding-left: 10px;
+    margin: 0;
+    border-left: 10px solid;
+    border-image: repeating-linear-gradient(
+      43deg,
+      white,
+      white 4px,
+      transparent 5px,
+      transparent 9px,
+      white 10px
+    ) 10;
+  }
+}
+
+.button {
+  font: normal normal 400 12pt/2 "Golos Text", sans-serif;
+  width: 200px;
+  height: 50px;
+  margin-top: 15px;
+  background-color: transparent;
+  border: 1px solid #a3a1a1;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: rgb(104, 102, 102);
+
+  &::after {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f1f1;
+    content: "";
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::after {
+    right: 0;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: #eeb9de;
+  }
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  height: 0;
+  border: 2px solid #f0e7ed;
+  transition: height 0.5s ease, border-color 0.5s ease;
+  position: relative;
+  
+  gap: 20px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(
+      90deg,
+      #ff00bb,
+      #ff00b6,
+      #ff00a8,
+      #ff0b93,
+      #ff347a,
+      #ff585f,
+      #ff7a44,
+      #ff9829,
+      #ffb20c,
+      #ffc500,
+      #ffd100,
+      #ffd500
+    );
+    content: "";
+    z-index: 2;
+    transition: all 1.2s ease;
+  }
+
+  &.open {
+    height: 700px; /* Adjust the height based on your needs */
+  }
+
+  &.open::before {
+    width: 0;
+    transition: all 1.2s ease;
+  }
+
+  .image {
+    width: 450px;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .div {
+    flex-grow: 1;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease;
+
+    &:hover {
+      flex-grow: 2 !important;
+    }
+  }
+
+  &.open {
+    height: auto;
+    transition: all 0.5s ease;
+    padding: 20px;
+
+    .div {
+      opacity: 1;
+      transition-delay: 0.15s;
+      flex-grow: 2;
+
+      &:nth-of-type(2) {
+        transition-delay: 0.3s;
+        flex-grow: 3;
+      }
+
+      &:nth-of-type(3) {
+        transition-delay: 0.45s;
+        flex-grow: 4;
+      }
+
+      &:nth-of-type(4) {
+        transition-delay: 0.6s;
+        flex-grow: 5;
+      }
+
+      &:nth-of-type(5) {
+        transition-delay: 0.75s;
+        flex-grow: 6;
+      }
+
+      &:nth-of-type(6) {
+        transition-delay: 0.9s;
+        flex-grow: 7;
+      }
+    }
+  }
+
+  &:has(.div:hover) .div:not(:hover) {
+    flex-grow: 1 !important;
+  }
+
+  &:has(.div:hover) .div {
+    transition-delay: 0s !important;
+  }
+
+  .div {
+    animation: pointerFix 1.7s linear 0s 1 normal;
+  }
+}
+
+@keyframes pointerFix {
+  0% {
+    pointer-events: none;
+  }
+  99% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: initial;
+  }
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1980px) {
+  .image {
+    width: 420px;
+    height: 140px;
+    margin: 1rem;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+  }
+
+}
+
+@media (max-width: 1545px) {
+  .figure {
+    flex-direction: column;
+    // align-items: flex-start;
+    padding: 20px;
+    gap: 0;
+
+    p{
+      font-size: .7rem;
+    }
+
+  }
+
+  .image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article {
+    margin: 0;
+  }
+  .section {
+    gap: 10px;
+    
+    &.open {
+      width: 100%;
+      height: auto;
+      transition: all 0.5s ease;
+      padding-top: 10px;
+      margin: 0;
+      
+    }
+  }
+  .button {
+    font: normal normal 400 12pt/2 "Golos Text", sans-serif;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: 1px solid #a3a1a1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-size: .9rem;
+    padding: 5px 10px;
+    color: rgb(104, 102, 102);
+  
+    &::after {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f1f1;
+      content: "";
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+  
+    &:hover::after {
+      right: 0;
+      transition: all 0.3s ease;
+    }
+  
+    &:hover {
+      color: #eeb9de;
+    }
+  }
+
+
+}
+
+// @media (max-width: 900px) {
+//   .figure {
+//     flex-direction: column;
+//     align-items: flex-end;
+//   }
+
+//   .figcaption {
+//     margin-bottom: 20px;
+//   }
+
+//   .button {
+//     width: 40%;
+//     max-width: 600px;
+//   }
+//   .article {
+//     margin: auto;
+//   }
+// }
+
+@media (max-width: 768px) {
+  .figure {
+    flex-direction: column;
+    // align-items: flex-start;
+    padding: 20px;
+    gap: 0;
+
+    p{
+      font-size: .7rem;
+    }
+
+  }
+
+  .image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article {
+    margin: 0;
+  }
+  .section {
+    gap: 10px;
+    
+    &.open {
+      width: 100%;
+      height: auto;
+      transition: all 0.5s ease;
+      padding-top: 10px;
+      margin: 0;
+      
+    }
+  }
+  .button {
+    font: normal normal 400 12pt/2 "Golos Text", sans-serif;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: 1px solid #a3a1a1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-size: .9rem;
+    padding: 5px 10px;
+    color: rgb(104, 102, 102);
+  
+    &::after {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f1f1;
+      content: "";
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+  
+    &:hover::after {
+      right: 0;
+      transition: all 0.3s ease;
+    }
+  
+    &:hover {
+      color: #eeb9de;
+    }
+  }
+
+
+}
+@media (max-width: 450px) {
+  .figure {
+    flex-direction: column;
+    // align-items: flex-start;
+    padding: 20px;
+    gap: 0;
+
+    p{
+      font-size: .7rem;
+    }
+
+  }
+
+  .image {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article {
+    margin: 0;
+  }
+  .section {
+    gap: 10px;
+    
+    &.open {
+      width: 100%;
+      height: auto;
+      transition: all 0.5s ease;
+      padding-top: 10px;
+      
+    }
+  }
+  .button {
+    font: normal normal 400 12pt/2 "Golos Text", sans-serif;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: 1px solid #a3a1a1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-size: .9rem;
+    padding: 5px 10px;
+    color: rgb(104, 102, 102);
+  
+    &::after {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f1f1;
+      content: "";
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+  
+    &:hover::after {
+      right: 0;
+      transition: all 0.3s ease;
+    }
+  
+    &:hover {
+      color: #eeb9de;
+    }
+  }
+
+
+}
+@media (max-width: 450px) {
+
+
+  .image {
+    width: 100%;
+    max-width: 150px;
+    height:auto;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .section {
+    gap: 10px;
+    
+    &.open {
+      width: 100%;
+      height: auto;
+      transition: all 0.5s ease;
+      padding-top: 10px;
+      
+    }
+  }
+}
+
+@media (max-width: 355px) {
+
+
+  .image {
+    width: 100%;
+    max-width: 130px;
+    height:auto;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .section {
+    gap: 10px;
+    
+    &.open {
+      width: 100%;
+      height: auto;
+      transition: all 0.5s ease;
+      padding-top: 10px;
+      
+    }
+  }
+
+
+
+}

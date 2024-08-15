@@ -1,0 +1,117 @@
+.footer {
+    background-color: #eeeded;
+    text-align: center;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  
+  .footer-nav {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-nav a {
+    margin: 0 10px;
+    color: #444;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .footer-nav a:hover {
+    color: #b087c5;
+  }
+  
+  .footer-social {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-social a {
+    margin: 12px;
+    color: #444;
+    font-size: 24px;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 50%;
+  }
+  
+  .footer-social .facebook:hover {
+    color: #7392ca;
+  }
+
+  .footer-social .instagram:hover {
+    color: #db7e9d;
+  }
+  
+  .footer-info {
+    color: #444;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer-info .powered{
+    font-size: 12px;
+  }
+  
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e497c0;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  .scroll-to-top a {
+    color: white;
+  }
+  
+  .scroll-to-top:hover {
+    background-color: #e666aa;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-nav a {
+        margin: 0 5px;
+        color: #444;
+        text-decoration: none;
+        font-size: 10px;
+      }
+  }
+  
+  @media (max-width: 500px) {
+    .footer-nav a {
+        margin: 0 5px;
+        color: #444;
+        text-decoration: none;
+        font-size: 8px;
+      }
+      .footer-social a {
+        margin: 12px;
+        font-size: 14px;
+        padding: 3px 10px;
+        border-radius: 50%;
+        margin-top: -2px;
+      }
+      .footer-info {
+        font-size: 14px;
+        margin-top: -4px;
+      }
+    
+      .footer-info .powered{
+        font-size: 7px;
+      }
+  }

@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './fonts.css';
+
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 2rem; */
+    /* max-width: 1440px; */
+    /* height: 100%;
+    width: 100%; */
+  }
+  
+  .about, .mission, .vision, .value {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px
+  }
+  
+  .image {
+    width: 650px;
+    height: 750px;
+    object-fit: cover;
+    border: 1px solid rgba(201, 199, 199, 0.281);
+    padding: 25px;
+  }
+  
+  .text {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    font-family: 'Merriweather', serif;
+    /* max-width: 850px; */
+    margin-top: 80px;
+  }
+  
+  h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-family: 'MyCustomFont', sans-serif;
+    color: rgba(128, 128, 128, 0.842);
+    
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 2;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(128, 128, 128, 0.801);
+    max-width: 750px;
+  }
+
+.left{
+    margin-left: 50px;
+    /* align-items: start;
+    text-align: start;
+    justify-content: start; */
+}
+.right{
+    align-items: end;
+    text-align: end;
+    margin-right: 50px;
+}
+
+.about,
+.value .right{
+    margin-top: 10rem;
+}
+
+.mission .image{
+    margin-top: -3rem;
+}
+
+.vision,
+.value .image{
+    margin-top: -7rem;
+}
+
+.vision .text{
+    margin-top: 13rem;
+}
+
+
+@media (max-width: 1500px) {
+    .about, .mission, .vision, .value {
+        padding: 50px;
+        padding-top: 0px;
+      }
+    .image {
+      width: 600px;
+      height: 700px;
+    }
+    .mission .image{
+        margin-top: -5rem;
+    }
+
+}
+@media (max-width: 1320px) {
+    .image {
+      width: 500px;
+      height: 600px;
+    }
+    h2 {
+        font-size: 50px;
+      }
+      
+      p {
+        font-size: 14px;
+      }
+      .vision .text{
+        margin-top: 9rem;
+    }
+    .value .right{
+        margin-top: 5rem;
+    }
+
+}
+@media (max-width: 1180px) {
+  .about-us-container{
+    margin-top: 3rem;
+  }
+    .image {
+      width: 350px;
+      height: 400px;
+    }
+    h2 {
+        font-size: 40px;
+      }
+      
+      p {
+        font-size: 13px;
+      }
+      .vision .text{
+        margin-top: 6rem;
+    }
+    .about,
+    .value .right{
+        margin-top: -2rem;
+    }
+    .mission .text{
+        margin-top: 0rem;
+    }
+    .about, .mission .left{
+      margin: 0;
+    }
+}
+@media (max-width: 825px) {
+    .about, .mission, .vision, .value {
+        padding: 20px;
+      }
+    .image {
+      width: 300px;
+      height: 350px;
+    }
+    h2 {
+        font-size: 34px;
+      }
+      
+      p {
+        font-size: 12px;
+      }
+      .vision .text{
+        margin-top: 6rem;
+    }
+    .about,
+    .value .right{
+        margin-top: -2rem;
+    }
+    .mission .text{
+        margin-top: 0rem;
+    }
+    .vision,
+    .value .image{
+    margin-top: -6rem;
+}
+.about, .mission .left{
+  margin: 0;
+}
+}
+
+@media (max-width: 670px) {
+    .about, .mission, .vision, .value {
+        padding: 20px;
+      }
+    .image {
+      width: 200px;
+      height: 250px;
+    }
+    h2 {
+        font-size: 34px;
+      }
+      
+      p {
+        font-size: 11px;
+      }
+      .vision .text{
+        margin-top: 2rem;
+    }
+    .about,
+    .value .right{
+        margin-top: -2rem;
+    }
+    .mission .text{
+        margin-top: -2rem;
+    }
+    .vision,
+.value .image{
+    margin-top: -3rem;
+}
+.about .left{
+  margin: 0;
+}
+.mission .left{
+  margin: 0;
+}
+}
+
+@media (max-width: 585px) {
+    .about, .mission, .vision, .value {
+        padding: 20px;
+      }
+    .image {
+      width: 200px;
+      height: 250px;
+      padding: 20px;
+    }
+    h2 {
+        font-size: 34px;
+      }
+      
+      p {
+        font-size: 9px;
+      }
+      .vision .text{
+        margin-top: 2rem;
+    }
+    .about,
+    .value .right{
+        margin-top: -2rem;
+    }
+    .mission .text{
+        margin-top: -2rem;
+    }
+    .mission .image{
+        margin-top: -50px;
+    }
+    .vision,
+.value .image{
+    margin-top: -3rem;
+}
+.about .left{
+  margin: 0;
+}
+.mission .left{
+  margin: 0;
+}
+}
+
+@media (max-width: 530px) {
+  .about, .mission, .vision, .value {
+      padding: 20px;
+    }
+  .image {
+    width: 210px;
+    height: 260px;
+    padding: 20px;
+  }
+  h2 {
+      font-size: 30px;
+    }
+    
+    p {
+      font-size: 9px;
+    }
+    .vision .text{
+      margin-top: 2rem;
+  }
+  .about,
+  .value .right{
+      margin-top: -2rem;
+  }
+  .mission .text{
+      margin-top: -2rem;
+  }
+  .mission .image{
+      margin-top: -50px;
+  }
+  .vision,
+.value .image{
+  margin-top: -3rem;
+}
+.about .left{
+margin: 0;
+}
+.mission .left{
+margin: 0;
+}
+}
+
+@media (max-width: 485px) {
+    .about, .mission, .vision, .value {
+        padding: 20px;
+      }
+    .image {
+      width: 160px;
+      height: 200px;
+      padding: 15px;
+    }
+    h2 {
+        font-size: 19px;
+      }
+      
+      p {
+        font-size: 7px;
+      }
+      .vision .text{
+        margin-top: 2rem;
+    }
+    .about,
+    .value .right{
+        margin-top: -2rem;
+    }
+    .about .text h2{
+       margin-top: -50px;
+    }
+    .about .text{
+      margin-left: 30px;
+    }
+    .mission .text{
+        margin-top: -2rem;
+    }
+    .mission .image{
+        margin-top: -50px;
+    }
+    .vision,
+.value .image{
+    margin-top: -3rem;
+}
+.about .left{
+  margin: 0;
+  margin-top: 4rem
+}
+.mission .left{
+  margin: 0;
+}
+}
+@media (max-width: 403px) {
+  .about, .mission {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    
+    }
+     .vision, .value {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  .image {
+    width: 310px;
+    height: 360px;
+    padding: 15px;
+    margin-top: 5rem;
+  }
+  h2 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 8px;
+    }
+  .vision .text{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    margin-left: 50px;
+  }
+  .value .text{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    margin-left: 50px;
+  }
+  .mission .image{
+    margin-top: 2rem;
+  }
+  .value .image{
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 377px) {
+  .about, .mission {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    
+    }
+     .vision, .value {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  .image {
+    width: 300px;
+    height: 350px;
+    padding: 15px;
+    margin-top: 5rem;
+  }
+  h2 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 9px;
+    }
+  .vision .text{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    margin-left: 50px;
+  }
+  .value .text{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    margin-left: 50px;
+  }
+  .mission .image{
+    margin-top: 2rem;
+  }
+  .value .image{
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+/* @media (max-width: 2000px) {
+      .about, .mission, .vision, .value {
+        max-width: 1350px;
+      }
+      .image {
+        width: 650px;
+        height: 700px;
+      }
+      .mission .image{
+        margin-top: -13rem;
+    }
+}
+
+@media (max-width: 1500px) {
+      .about, .mission, .vision, .value {
+        max-width: 1150px;
+      }
+      .image {
+        width: 550px;
+        height: 600px;
+      }
+      .text {
+        margin: 120px;
+      }
+      .vision .image{
+        margin-top: -13rem;
+    }
+    .vision .text{
+        margin-top: -2rem;
+    }
+    .mission .image{
+        margin-top: -8rem;
+    }
+    .value .text{
+        margin-top: -1rem;
+    }
+      
+}
+@media (max-width: 1300px) {
+      .about, .mission, .vision, .value {
+        max-width: 1050px;
+      }
+      .image {
+        width: 500px;
+        height: 550px;
+      }
+      .text {
+        margin: 120px;
+      }
+      .vision .text{
+        margin-top: -2rem;
+    }
+}
+
+@media (max-width: 1225px) {
+    .about, .mission, .vision, .value {
+      max-width: 800px;
+    }
+    .image {
+      width: 400px;
+      height: 450px;
+    }
+    .text {
+        margin: 40px;
+      }
+
+}
+@media (max-width: 968px) {
+    .about, .mission, .vision, .value {
+      max-width: 600px;
+    }
+    .image {
+      width: 300px;
+      height: 350px;
+    }
+
+      h2 {
+        font-size: 50px;
+      }
+      .about .text{
+       margin-top: -15px;
+      }
+    
+    .vision .image{
+        margin-top: -10rem;
+    }
+    
+    .vision .text{
+        justify-content: end;
+        align-items: end;
+        text-align: end;
+        
+    }
+    
+    .mission .text{
+        margin-top: -2rem;
+    }
+    
+    .mission .image{
+        margin-top: -8rem;
+    }
+    
+    .value .image{
+        margin-top: -12rem;
+    }
+    
+    .value .text{
+        justify-content: start;
+        align-items: end;
+        text-align: end;
+    }
+    
+} */
+
+
+
+  
