@@ -4,5 +4,5 @@
   publish = ".next"
 
 [functions]
-  directory = "client/netlify/functions"
+  directory = "netlify/functions"
 
