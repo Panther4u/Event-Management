@@ -1,7 +1,8 @@
 [build]
   base    = "client"
   command = "npm run build"
-  publish = "client/out" # For static exports, the output directory is typically `out`
+  publish = ".next"
 
 [functions]
-  directory = "client/netlify/functions"
+  directory = "netlify/functions"
+

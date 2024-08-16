@@ -23,20 +23,20 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+    reactStrictMode: true,
 };
 
 module.exports = {
-  images: {
-      remotePatterns: [
-          {
-              protocol: "https",
-              hostname: "**",
-          },
-          {
-              protocol: "http",
-              hostname: "**",
-          },
-      ],
-  },
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "**",
+            },
+            {
+                protocol: "http",
+                hostname: "**",
+            },
+        ],
+    },
 };
