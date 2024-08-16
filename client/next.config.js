@@ -12,8 +12,9 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+    unoptimized: true,  // Disable image optimization for static exports
   },
-  output: 'export',  // Add this line to enable static export
+  output: 'export',  // Enable static export
 };
 
 module.exports = nextConfig;
