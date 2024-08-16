@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm install --legacy-peer-deps && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": " -d dist"
+    "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -44,9 +46,9 @@
   "devDependencies": {
     "@types/node": "20.12.12",
     "@types/react": "18.3.2",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.20",
     "netlify": "^13.1.20",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10"
   }
 }

@@ -1,13 +1,11 @@
 [build]
-  base = "client"
-  publish = "client/.next"
-  functions = "client/netlify/functions"
   command = "npm run build"
+  publish = "out"
 
-[context.production.environment]
-  NODE_ENV = "production"
+[dev]
+  command = "npm run dev"
+  port = 3000
 
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
