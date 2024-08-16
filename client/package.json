@@ -2,13 +2,13 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-  "dev": "next dev",
-  "build": "npm install --legacy-peer-deps && next build",
-  "start": "next start",
-  "lint": "next lint",
-  "deploy": " -d dist"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm install --legacy-peer-deps && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": " -d dist"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -34,7 +34,6 @@
     "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
     "react-stripe-checkout": "^2.6.3",
-    "react-swipeable-views": "^0.14.0",
     "sass": "^1.77.8",
     "sharp": "^0.33.4",
     "slick-carousel": "^1.8.1",
