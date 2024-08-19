@@ -1,12 +1,13 @@
 [build]
-  base    = "client" # Make sure "client" is the correct directory
-  command = "npm run build"
-  publish = ".next"
+  base = "client" # Ensure this is correct
+  command = "npm run build && npm run export"
+  publish = "out"
+
 
 [functions]
-  directory = "netlify/functions"
+  directory = "netlify/functions" # Adjust if using Netlify functions
 
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/index.html"
   status = 200
