@@ -206,7 +206,7 @@ export default function Signup() {
                             </div>
                             <div>
                                 <label className="block mb-2 text-sm font-medium text-gray-700">
-                                    Enter VIT Registration Number
+                                    Enter EVENT Registration Number
                                 </label>
                                 <input
                                     type="text"
