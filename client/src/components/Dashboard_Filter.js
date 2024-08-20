@@ -42,7 +42,7 @@ function Dashboard_Filter({
             <form className="flex flex-col gap-y-3">
                 {/* Input to search through keyword */}
                 <div className="mb-2">
-                    <label htmlFor="keyword" className="font-medium block mb-1">
+                    <label htmlFor="keyword" className="font-medium block mb-1 ">
                         Keyword
                     </label>
                     <input

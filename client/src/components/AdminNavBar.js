@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import AdminDropdown from "@/components/AdminDropdown";
-
+import logo from 'public/assets/landing page images/logo.png';
 export default function NavBar() {
     const router = useRouter();
 
@@ -56,19 +56,28 @@ export default function NavBar() {
                         onClick={() => router.push("/admin/dashboard")}
                         className="flex items-center gap-x-3 cursor-pointer"
                     >
-                        <Image
+                        {/* <Image
                             src="/favicon_io/android-chrome-192x192.png"
                             width={500}
                             height={500}
                             alt="Logo"
                             className="h-8 w-8"
-                        />
-                        <h1 className="m-2 text-black font-bold text-4xl">
+                        /> */}
+                        {/* <h1 className="m-2 text-black font-bold text-4xl">
                             {"<In"}
                             <span className="text-[color:var(--darker-secondary-color)]">
                                 VIT
                             </span>
                             {"e />"}
+                        </h1> */}
+                        <h1 className="m-2 text-black font-bold text-4xl">
+                        <Image
+                            className='logoimg'
+                            src={logo}
+                            width={60}
+                            height={60}
+                            alt="Inc Logo"
+                            />
                         </h1>
                     </div>
                     <nav className="text-sm">

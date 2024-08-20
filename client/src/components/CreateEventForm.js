@@ -80,8 +80,8 @@ const CreateEvent = () => {
     };
 
     return (
-        <div className="flex h-full text-left bg-white rounded-lg shadow-lg items-center">
-            <div className="p-8 w-full">
+        <div className="flex h-full  text-left bg-transparent rounded-lg shadow-lg items-center">
+            <div className="p-4 w-full">
                 <h1 className="text-2xl font-bold text-gray-700 mb-4">
                     Create an Event
                 </h1>
@@ -106,7 +106,7 @@ const CreateEvent = () => {
                             type="text"
                             id="name"
                             name="name"
-                            className="adminDropDownInput"
+                            className="adminDropDownInput bg-transparent rounded-md border border-gray-200 bg-transparent rounded-md border border-gray-200"
                             value={formData.name}
                             onChange={handleChange}
                             required
@@ -124,7 +124,7 @@ const CreateEvent = () => {
                                 type="text"
                                 id="venue"
                                 name="venue"
-                                className="adminDropDownInput"
+                                className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                                 value={formData.venue}
                                 onChange={handleChange}
                                 required
@@ -141,7 +141,7 @@ const CreateEvent = () => {
                                 type="text"
                                 id="organizer"
                                 name="organizer"
-                                className="adminDropDownInput"
+                                className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                                 value={formData.organizer}
                                 onChange={handleChange}
                                 required
@@ -158,7 +158,7 @@ const CreateEvent = () => {
                                 type="datetime-local"
                                 id="datetime"
                                 name="datetime"
-                                className="adminDropDownInput"
+                                className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                                 value={formData.datetime}
                                 onChange={handleChange}
                                 required
@@ -177,7 +177,7 @@ const CreateEvent = () => {
                                 name="price"
                                 min="0"
                                 max="3000"
-                                className="adminDropDownInput"
+                                className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                                 value={formData.price}
                                 onChange={handleChange}
                                 required
@@ -194,7 +194,7 @@ const CreateEvent = () => {
                                 type="url"
                                 id="profile"
                                 name="profile"
-                                className="adminDropDownInput"
+                                className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                                 value={formData.profile}
                                 onChange={handleChange}
                             />
@@ -210,7 +210,7 @@ const CreateEvent = () => {
                                 type="url"
                                 id="cover"
                                 name="cover"
-                                className="adminDropDownInput"
+                                className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                                 value={formData.cover}
                                 onChange={handleChange}
                             />
@@ -226,7 +226,7 @@ const CreateEvent = () => {
                         <textarea
                             id="description"
                             name="description"
-                            className="adminDropDownInput"
+                            className="adminDropDownInput bg-transparent rounded-md border border-gray-200"
                             value={formData.description}
                             rows="5"
                             onChange={handleChange}
