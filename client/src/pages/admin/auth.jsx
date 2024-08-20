@@ -1,23 +1,10 @@
-import { setAdminToken } from "@/utils/setAdminToken";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import Cookies from "universal-cookie";
+import { setAdminToken } from "@/utils/setAdminToken";
 
-export async function getStaticProps(context) {
-    const cookies = new Cookies(context.req.headers.cookie);
-    const adminId = cookies.get("admin_token");
-    if (!adminId) {
-        return {
-            props: { adminIdCookie: null },
-        };
-    }
-    return {
-        props: { adminIdCookie: adminId },
-    };
-}
-
-export default function signin({ adminIdCookie }) {
+export default function Signin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [step, setStep] = useState(1);
@@ -25,56 +12,50 @@ export default function signin({ adminIdCookie }) {
     const router = useRouter();
 
     useEffect(() => {
-        // If cookie found, Redirect to dashboard
-        if (adminIdCookie) {
-            setStep(2); // Skip auth steps
+        const cookies = new Cookies();
+        const adminId = cookies.get("admin_token");
+
+        if (adminId) {
+            setStep(2);
 
             setTimeout(() => {
-                // Set success message
                 setMessage({
                     errorMsg: "",
                     successMsg: "Redirecting you ...",
                 });
             }, 500);
 
-            // Redirect to dashboard
             setTimeout(() => {
                 router.push("/admin/dashboard");
             }, 800);
         }
-    }, []);
+    }, [router]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/admin/auth`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password,
-                }),
-            }
-        );
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/auth`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
         const data = await response.json();
+
         if (response.status === 200) {
             setMessage({ errorMsg: "", successMsg: data.msg });
-            console.log(data);
-            setStep(2); // Move to next step on the same page
-
-            setAdminToken(data.admin_token); // set cookie when signed up
+            setStep(2);
+            setAdminToken(data.admin_token);
         } else {
-            console.error(`Failed with status code ${response.status}`);
             setMessage({ errorMsg: data.msg, successMsg: "" });
         }
     };
 
     return (
         <div className="m-2">
-            {/* back button */}
+            {/* Back button */}
             <FiArrowLeft
                 onClick={() => router.push("/")}
                 size={24}
@@ -89,7 +70,6 @@ export default function signin({ adminIdCookie }) {
             <div className="max-w-3xl mx-auto mt-10">
                 {/* Steps Nav */}
                 <div className="flex items-center justify-center">
-                    {/* Step 1: normal-height:fit; mobile-view: 6rem*/}
                     <div
                         className={`w-full h-24 lg:h-fit ${
                             step === 1 ? `font-medium` : ``
@@ -107,7 +87,6 @@ export default function signin({ adminIdCookie }) {
                         </div>
                     </div>
 
-                    {/* Step 2: normal-height:fit; mobile-view: 6rem */}
                     <div
                         className={`w-full h-24 lg:h-fit ${
                             step === 2 ? `font-medium` : ``
@@ -143,7 +122,7 @@ export default function signin({ adminIdCookie }) {
                 {/* Steps Content */}
                 <div className="bg-white p-5 rounded-lg mt-2">
                     {
-                        /* Step 1 Content*/
+                        /* Step 1 Content */
                         step === 1 && (
                             <form onSubmit={handleSubmit}>
                                 <label className="block mb-2 text-sm font-medium text-gray-700">
@@ -167,9 +146,7 @@ export default function signin({ adminIdCookie }) {
                                     name="password"
                                     value={password}
                                     className="bg-gray-100 p-2 mx-2 mb-4 focus:outline-none rounded-lg w-full"
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)
-                                    }
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
 
                                 <p className="text-sm text-gray-700 mt-6">
@@ -193,7 +170,7 @@ export default function signin({ adminIdCookie }) {
                                 </button>
 
                                 <button
-                                    type="submit"
+                                    type="button"
                                     onClick={() => {
                                         setEmail("invite.testing@gmail.com");
                                         setPassword("invite123");
@@ -223,9 +200,7 @@ export default function signin({ adminIdCookie }) {
                                     </div>
                                 </div>
                                 <button
-                                    onClick={() =>
-                                        router.push("/admin/dashboard")
-                                    }
+                                    onClick={() => router.push("/admin/dashboard")}
                                     className="mt-4 bg-[color:var(--darker-secondary-color)] text-white py-2 px-4 rounded hover:bg-[color:var(--secondary-color)] transition ease-in-out"
                                 >
                                     Go to your dashboard
