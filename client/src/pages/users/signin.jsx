@@ -1,6 +1,8 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { FiArrowLeft } from "react-icons/fi";
+import Cookies from "universal-cookie";
+import { getUserToken } from "../../utils/getUserToken"; // Import the getUserToken function
 
 export default function Signin() {
     const [email, setEmail] = useState("");
@@ -10,8 +12,8 @@ export default function Signin() {
     const router = useRouter();
 
     useEffect(() => {
-        const userId = localStorage.getItem("user_token");
-        if (userId) {
+        const userToken = getUserToken(); // Get the token from cookies
+        if (userToken) {
             setStep(3); // Skip login steps
             setMessage({
                 errorMsg: "",
@@ -75,6 +77,11 @@ export default function Signin() {
             if (response.ok) {
                 setMessage({ errorMsg: "", successMsg: data.msg });
                 setStep(3); // Move to next step
+
+                // Set the user token in cookies
+                const cookies = new Cookies();
+                cookies.set("user_token", data.user_id, { path: "/" });
+
                 localStorage.setItem("user_token", data.user_id); // set token in localStorage
             } else {
                 throw new Error(data.msg);
@@ -84,7 +91,6 @@ export default function Signin() {
             setMessage({ errorMsg: error.message, successMsg: "" });
         }
     };
-
     return (
         <div className="m-2">
             <FiArrowLeft

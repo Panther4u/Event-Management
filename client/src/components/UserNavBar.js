@@ -10,37 +10,45 @@ export default function NavBar() {
     const userIdCookie = getUserToken();
     const [userData, setUserData] = useState({});
 
-    // fetch the user data as soon as the page loads
     const fetchUserData = async () => {
-        // If cookie was manually removed from browser
+        // Check for the presence of the user token
         if (!userIdCookie) {
-            console.error("No cookie found! Please signin");
-            // redirect to signin
+            console.error("No cookie found! Please sign in.");
             router.push("/users/signin");
+            return;
         }
-        const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/user/details`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    user_token: userIdCookie,
-                }),
-            }
-        );
-        if (!response.ok)
-            throw new Error(`${response.status} ${response.statusText}`);
-
-        // User Details fetched from API `/user/details`
+    
         try {
-            const data = await response.json();
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_API_URL}/user/details`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        user_token: userIdCookie,
+                    }),
+                }
+            );
+    
+            // Check if the response status is OK
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+    
+            // Log the raw text response before parsing
+            const responseText = await response.text();
+            console.log("Raw Response:", responseText);
+    
+            // Parse the response as JSON
+            const data = JSON.parse(responseText);
             setUserData(data);
         } catch (error) {
-            console.error("Invalid JSON string:", error.message);
+            console.error("Error fetching user data:", error.message);
         }
     };
+    
 
     useEffect(() => {
         fetchUserData();
