@@ -58,7 +58,7 @@ export default function NavBar() {
     return (
         <div className="mb-[8vh]">
             <header className="bg-[color:var(--white-color)] fixed top-0 z-50 w-full shadow-md text-[color:var(--darker-secondary-color)]">
-                <div className="container mx-auto flex items-center flex-col lg:flex-row  justify-between p-4">
+                <div className="container mx-auto flex items-center flex-col lg:flex-row md:flex-row sm:flex-row  justify-between p-4">
                     <div
                         onClick={() => router.push("/users/dashboard")}
                         className="flex items-center gap-x-3 cursor-pointer"
