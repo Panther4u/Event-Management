@@ -39,7 +39,7 @@ export default function NavBar() {
     
             // Log the raw text response before parsing
             const responseText = await response.text();
-            console.log("Raw Response:", responseText);
+            // console.log("Raw Response:", responseText);
     
             // Parse the response as JSON
             const data = JSON.parse(responseText);
