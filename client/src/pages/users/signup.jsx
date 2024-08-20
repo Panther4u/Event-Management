@@ -65,7 +65,7 @@ export default function Signup() {
     // Handle complete signup
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const regExp = /^\d{2}[A-Za-z]{3}\d{5}$/;
+        const regExp = /[A-Za-z]{2}\d{4}$/;
         if (regExp.test(regNumber)) {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/signup/verify`, {
                 method: "POST",
@@ -206,7 +206,7 @@ export default function Signup() {
                             </div>
                             <div>
                                 <label className="block mb-2 text-sm font-medium text-gray-700">
-                                    Enter EVENT Registration Number
+                                    Enter Event Registration Number
                                 </label>
                                 <input
                                     type="text"
@@ -214,7 +214,7 @@ export default function Signup() {
                                     name="regNumber"
                                     value={regNumber}
                                     autoComplete="none"
-                                    placeholder="12ABC12345"
+                                    placeholder="AB1234"
                                     required
                                     className="bg-gray-100 p-2 mx-2 mb-4 focus:outline-none rounded-lg w-10/12"
                                     onChange={(e) => setRegNumber(e.target.value)}
