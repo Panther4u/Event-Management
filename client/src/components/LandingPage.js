@@ -91,8 +91,9 @@
 // pages/LandingPage.js
 // import Developers from "@/components/Landing_Page_partials/Developers";
 // import FeaturesZigZag from "@/components/Landing_Page_partials/FeaturesZigZag";
+
 import LandingPageDevelopers from "@/utils/landing_page_developers";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "./Landing_Page_partials/Banner";
 import Navbar from "./Landing_Page_partials/Navbar";
 import About from "./Landing_Page_partials/About";
@@ -105,6 +106,9 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const [feature1, feature2, feature3, dev1, dev2, dev3, pm1] = LandingPageDevelopers;
 
 function LandingPage() {
+    const [events, setEvents] = useState([]);
+    const [error, setError] = useState(null);
+
     const fetchAllEvents = async () => {
         const url = `${apiUrl}/getallevents`;
         console.log("Fetching events from:", url);
@@ -114,11 +118,15 @@ function LandingPage() {
             if (!response.ok) {
                 throw new Error(`${response.status} ${response.statusText}`);
             }
+            const data = await response.json();
+            console.log("Fetched events data:", data);
+            setEvents(data); // Set the events state
         } catch (error) {
             console.error("Error fetching events:", error);
+            setError(error.message); // Set error state
         }
     };
-    
+
     useEffect(() => {
         fetchAllEvents();
     }, []);
@@ -127,15 +135,20 @@ function LandingPage() {
         <div className="overflow-x-hidden">
             <div className="flex flex-col min-h-screen overflow-x-hidden ">
                 <Navbar className="overflow-x-hidden" />
-                <Banner/>
+                <Banner />
                 <About />
+                {/* Uncomment if Category section is needed */}
                 {/* <Category /> */}
                 <Testimonial />
                 <Footer />
+                {/* Uncomment if features and developers sections are needed */}
                 {/* <main className="grow">
                     <FeaturesZigZag images={[feature1, feature2, feature3]} />
                     <Developers images={[dev1, dev2, dev3, pm1]} />
                 </main> */}
+                {error && <p className="text-red-500">Error: {error}</p>}
+                {/* Render events data if needed */}
+                {/* {events.length > 0 && <EventsList events={events} />} */}
             </div>
         </div>
     );
