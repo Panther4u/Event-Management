@@ -3,6 +3,7 @@ import { getUserToken } from "@/utils/getUserToken";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import logo from 'public/assets/landing page images/logo.png';
 
 export default function NavBar() {
     const router = useRouter();
@@ -57,12 +58,12 @@ export default function NavBar() {
     return (
         <div className="mb-[8vh]">
             <header className="bg-[color:var(--white-color)] fixed top-0 z-50 w-full shadow-md text-[color:var(--darker-secondary-color)]">
-                <div className="container mx-auto flex items-center flex-col lg:flex-row justify-between p-4">
+                <div className="container mx-auto flex items-center flex-col lg:flex-row  justify-between p-4">
                     <div
                         onClick={() => router.push("/users/dashboard")}
                         className="flex items-center gap-x-3 cursor-pointer"
                     >
-                        <Image
+                        {/* <Image
                             src="/favicon_io/android-chrome-192x192.png"
                             width={500}
                             height={500}
@@ -75,10 +76,19 @@ export default function NavBar() {
                                 VIT
                             </span>
                             {"e />"}
+                        </h1> */}
+                        <h1 className="m-2 text-black font-bold text-4xl">
+                        <Image
+                            className='logoimg'
+                            src={logo}
+                            width={60}
+                            height={60}
+                            alt="Inc Logo"
+                            />
                         </h1>
                     </div>
-                    <nav className="text-sm">
-                        <ul className="flex items-center">
+                    <nav className="text-xs">
+                        <ul className="flex items-center font-medium">
                             <li
                                 onClick={() => router.push("/users/dashboard")}
                                 className="mr-4 cursor-pointer"
