@@ -96,7 +96,9 @@ export default function Dropdown({ userData }) {
                         onClick={handleLogout}
                         className="py-4 group hover:bg-[color:var(--darker-secondary-color)] transition-all ease-in-out"
                     >
-                        <button className="text-left font-medium w-full text-md px-4 text-gray-800 group-hover:text-white transition-all ease-in-out">
+                        <button className="text-left font-medium w-full text-sm px-4 text-gray-800 group-hover:text-white transition-all ease-in-out"
+                        style={{ color: 'var(--darker-secondary-color)' }}>
+                            
                             Logout
                         </button>
                     </div>

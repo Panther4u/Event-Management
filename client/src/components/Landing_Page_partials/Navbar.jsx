@@ -119,16 +119,16 @@ const Navbar = () => {
               <li><a className="nav-link" href="/users/aboutpage">About</a></li>
               <li><a className="nav-link" href="/users/gallerypage">Gallery</a></li>
               <li><a className="nav-link" href="/users/contactpage">Contact</a></li>
-              <li><a href="/users/signin" id='right' className="nav-link"> Signin </a></li>
-              <li className='eve'><a onClick={() => router.push("/admin/auth")} id='right' className="event" href="#">Event Manager</a></li>
+              <li><a href="/users/signin" id='right' className="nav-link" style={{ color: 'var(--darker-secondary-color)' }}> Signin </a></li>
+              <li className='eve'><a onClick={() => router.push("/admin/auth")} id='right' className="event" href="#">Book Us</a></li>
             </ul>
           </nav>
         </div>
 
         <div className="nav-end">
           <div className="right-contain">
-          <a href="/users/signin" className="nav-link px-5"> Signin </a>
-          <button onClick={() => router.push("/admin/auth")}  href="#">Event Manager</button>
+          <a href="/users/signin" className="nav-link sign px-5" style={{ color: 'var(--darker-secondary-color)' }}> Signin </a>
+          <button onClick={() => router.push("/admin/auth")}  href="#" >Book Us</button>
           </div> 
           <button
             id="hamburger"

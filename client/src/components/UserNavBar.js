@@ -10,6 +10,7 @@ export default function NavBar() {
 
     const userIdCookie = getUserToken();
     const [userData, setUserData] = useState({});
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const fetchUserData = async () => {
         // Check for the presence of the user token
@@ -58,7 +59,7 @@ export default function NavBar() {
     return (
         <div className="mb-[8vh]">
             <header className="bg-[color:var(--white-color)] fixed top-0 z-50 w-full shadow-md text-[color:var(--darker-secondary-color)]">
-                <div className="container mx-auto flex items-center flex-col lg:flex-row md:flex-row sm:flex-row  justify-between p-4">
+                <div className="container mx-auto flex items-center  lg:flex-row md:flex-row sm:flex-row  justify-between p-4 relative">
                     <div
                         onClick={() => router.push("/users/dashboard")}
                         className="flex items-center gap-x-3 cursor-pointer"
@@ -87,22 +88,30 @@ export default function NavBar() {
                             />
                         </h1>
                     </div>
-                    <nav className="text-xs">
-                        <ul className="flex items-center font-medium">
+                    <div className="lg:hidden absolute right-4 top-5">
+                        <button
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="text-2xl"
+                        >
+                            &#9776;
+                        </button>
+                    </div>
+                    <nav className={`lg:flex ${isMenuOpen ? "block" : "hidden"} lg:items-center lg:text-sm font-medium`}>
+                        <ul className="flex items-center text-xs">
                             <li
                                 onClick={() => router.push("/users/dashboard")}
                                 className="mr-4 cursor-pointer"
                             >
                                 <a>Dashboard</a>
                             </li>
-                            <li
+                            {/* <li
                                 onClick={() =>
                                     router.push("/users/past_events")
                                 }
                                 className="mr-4 cursor-pointer"
                             >
                                 <a>Past Events</a>
-                            </li>
+                            </li> */}
                             <li
                                 onClick={() => router.push("/")}
                                 className="mr-4 cursor-pointer"

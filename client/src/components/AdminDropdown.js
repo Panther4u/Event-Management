@@ -39,7 +39,8 @@ export default function Dropdown({ adminData }) {
         <li className="mr-4 cursor-pointer relative" ref={dropdownRef}>
             <button
                 onClick={toggleDropdown}
-                className="flex items-center justify-center bg-[color:var(--darker-secondary-color)] text-white text-sm font-medium rounded-md w-28 h-10 focus:outline-none"
+                className="flex items-center justify-center text-white text-xs font-medium rounded-md w-20 h-10 focus:outline-none"
+                style={{ color: 'var(--darker-secondary-color)' }}
             >
                 <span className="mr-2">Admin</span>
                 <FaAngleDown
@@ -75,9 +76,9 @@ export default function Dropdown({ adminData }) {
                         onClick={handleLogout}
                         className="py-4 group hover:bg-[color:var(--darker-secondary-color)] transition-all ease-in-out"
                     >
-                        <button
-                            className="text-left w-full px-4 text-gray-800 group-hover:text-white transition-all ease-in-out"
-                        >
+                        <button className="text-left font-medium w-full text-sm px-4 text-gray-800 group-hover:text-white transition-all ease-in-out"
+                        style={{ color: 'var(--darker-secondary-color)' }}>
+                            
                             Logout
                         </button>
                     </div>

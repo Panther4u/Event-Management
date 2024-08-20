@@ -1,24 +1,24 @@
-import { getAdminToken } from "@/utils/getAdminToken";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import AdminDropdown from "@/components/AdminDropdown";
 import logo from 'public/assets/landing page images/logo.png';
+import { getAdminToken } from "@/utils/getAdminToken";
+
 export default function NavBar() {
     const router = useRouter();
-
     const adminIdCookie = getAdminToken();
-    // console.log(adminIdCookie);
     const [adminData, setAdminData] = useState({});
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // fetch the admin data as soon as the page loads
+    // Fetch the admin data as soon as the page loads
     const fetchAdminData = async () => {
-        // If cookie was manually removed from browser
         if (!adminIdCookie) {
             console.error("No cookie found! Please authenticate");
-            // redirect to signin
             router.push("/admin/auth");
+            return;
         }
+
         const response = await fetch(
             `${process.env.NEXT_PUBLIC_API_URL}/admin/details`,
             {
@@ -31,13 +31,12 @@ export default function NavBar() {
                 }),
             }
         );
+
         if (!response.ok)
             throw new Error(`${response.status} ${response.statusText}`);
 
-        // Admin Details fetched from API `/admin/details`
         try {
             const data = await response.json();
-            // console.log(data);
             setAdminData(data);
         } catch (error) {
             console.error("Invalid JSON string:", error.message);
@@ -51,37 +50,31 @@ export default function NavBar() {
     return (
         <div className="mb-[8vh]">
             <header className="bg-[color:var(--white-color)] fixed top-0 z-50 w-full shadow-md text-[color:var(--darker-secondary-color)]">
-                <div className="container mx-auto flex items-center flex-col lg:flex-row justify-between p-4">
+                <div className="container mx-auto flex items-center  lg:flex-row md:flex-row sm:flex-row  justify-between p-4 relative">
                     <div
                         onClick={() => router.push("/admin/dashboard")}
                         className="flex items-center gap-x-3 cursor-pointer"
                     >
-                        {/* <Image
-                            src="/favicon_io/android-chrome-192x192.png"
-                            width={500}
-                            height={500}
-                            alt="Logo"
-                            className="h-8 w-8"
-                        /> */}
-                        {/* <h1 className="m-2 text-black font-bold text-4xl">
-                            {"<In"}
-                            <span className="text-[color:var(--darker-secondary-color)]">
-                                VIT
-                            </span>
-                            {"e />"}
-                        </h1> */}
                         <h1 className="m-2 text-black font-bold text-4xl">
-                        <Image
-                            className='logoimg'
-                            src={logo}
-                            width={60}
-                            height={60}
-                            alt="Inc Logo"
+                            <Image
+                                className='logoimg'
+                                src={logo}
+                                width={60}
+                                height={60}
+                                alt="Inc Logo"
                             />
                         </h1>
                     </div>
-                    <nav className="text-sm">
-                        <ul className="flex items-center">
+                    <div className="lg:hidden absolute right-4 top-5">
+                        <button
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="text-2xl"
+                        >
+                            &#9776;
+                        </button>
+                    </div>
+                    <nav className={`lg:flex ${isMenuOpen ? "block" : "hidden"} lg:items-center lg:text-sm font-medium`}>
+                        <ul className="flex items-center text-xs">
                             <li
                                 onClick={() => router.push("/admin/dashboard")}
                                 className="mr-4 cursor-pointer"
