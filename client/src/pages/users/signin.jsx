@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import Cookies from "universal-cookie";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     const cookies = new Cookies(context.req.headers.cookie);
     const userId = cookies.get("user_token");
     if (!userId) {

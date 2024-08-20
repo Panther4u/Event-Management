@@ -36,14 +36,14 @@ const nextConfig = {
             },
         ],
     },
-    async exportPathMap(defaultPathMap) {
-        // Exclude pages using getServerSideProps from export
-        const pathMap = { ...defaultPathMap };
-        delete pathMap['/admin/auth'];
-        delete pathMap['/users/signup'];
-        delete pathMap['/users/signin']; // Exclude this page too
-        return pathMap;
-    },
+    // async exportPathMap(defaultPathMap) {
+    //     // Exclude pages using getServerSideProps from export
+    //     const pathMap = { ...defaultPathMap };
+    //     delete pathMap['/admin/auth'];
+    //     delete pathMap['/users/signup'];
+    //     delete pathMap['/users/signin']; // Exclude this page too
+    //     return pathMap;
+    // },
 };
 
 module.exports = nextConfig;
